@@ -1,3 +1,40 @@
 <view class="container">
-首页
+    <serachInput></serachInput>
+    <!-- 轮播图 -->
+    <view class="swiper-container">
+        <swiper autoplay indicator-dots circular>
+            <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+                <navigator>
+                    <image mode="widthFix" src="{{item.image_src}}"></image>
+                </navigator>
+            </swiper-item>
+        </swiper>
+    </view>
+    <!-- 导航栏 -->
+    <view class="cate-container">
+        <navigator wx:for="{{catesList}}" wx:key="{{name}}">
+            <image src="{{item.image_src}}" mode="widthFix"/>
+        </navigator>
+    </view>
+    <!-- 楼层 -->
+    <view class="floor-container">
+        <view class="floor-group" wx:for="{{floorList}}" 
+            wx:for-item="item1"
+            wx:for-index="index1"
+            wx:key="floor_title"
+            >
+            <view class="floor-title">
+                <image mode="widthFix" src="{{item1.floor_title.image_src}}"/>
+            </view>
+            <view class="floor-list">
+                <navigator wx:for="{{item1.product_list}}"
+                    wx:for-item="item2"
+                    wx:for-index="index2"
+                    wx:key="name"
+                >
+                    <image mode="{{index2 === 0 ? 'widthFix' : 'scaleToFix'}}" src="{{item2.image_src}}"/>
+                </navigator>
+            </view>
+        </view>
+    </view>
 </view>

@@ -1,39 +1,53 @@
-//Page Object
+import { request } from '../../request/index'
 Page({
   data: {
-    
+    swiperList: [], // 轮播图数据
+    catesList:[], // 导航栏数据
+    floorList:[] // 楼层数据
   },
-  //options(Object)
-  onLoad: function(options) {
-    
+  onLoad(){
+    this.getSwiperList(),
+    this.getCatesList(),
+    this.getFloorList()
   },
-  onReady: function() {
-    
-  },
-  onShow: function() {
-    
-  },
-  onHide: function() {
+  onHide(){
 
   },
-  onUnload: function() {
-
+  // 获取轮播图数据
+  getSwiperList() { 
+    // wx.request({
+    //   url: "https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata",
+    //   success:(res) => { 
+    //     this.setData({
+    //       swiperList:res.data.message
+    //     })
+    //   }
+    // })
+    request({ url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata' })
+      .then(res => { 
+        this.setData({
+          swiperList:res.data.message
+        })
+      })
   },
-  onPullDownRefresh: function() {
-
+  //获取导航数据
+  getCatesList() { 
+    request({ url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/catitems' })
+      .then(res => { 
+        this.setData({
+          catesList:res.data.message
+        })
+      })
   },
-  onReachBottom: function() {
-
-  },
-  onShareAppMessage: function() {
-
-  },
-  onPageScroll: function() {
-
-  },
-  //item(index,pagePath,text)
-  onTabItemTap:function(item) {
-
+  //获取楼层数据
+  getFloorList() { 
+    request({ url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/floordata' })
+      .then(res => { 
+        this.setData({
+          floorList:res.data.message
+        })
+      })
   }
+  
 });
   
