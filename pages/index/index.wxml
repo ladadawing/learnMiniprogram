@@ -12,7 +12,7 @@
     </view>
     <!-- 导航栏 -->
     <view class="cate-container">
-        <navigator wx:for="{{catesList}}" wx:key="{{name}}">
+        <navigator wx:for="{{catesList}}" wx:key="name">
             <image src="{{item.image_src}}" mode="widthFix"/>
         </navigator>
     </view>
