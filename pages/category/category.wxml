@@ -26,6 +26,7 @@
                 </view>
                 <view class="goods-list">
                     <navigator wx:for="{{item1.children}}"
+                        url="/pages/goods_list/goods_list?cid={{item2.cat_id}}"
                         wx:for-item="item2"
                         wx:key="cat_id"
                         wx:for-index="index2">

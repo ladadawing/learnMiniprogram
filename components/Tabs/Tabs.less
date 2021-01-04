@@ -1,0 +1,19 @@
+.tabs{
+    .tabs-title{
+        display: flex;
+        
+        .title-item{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            width: 33%;
+            padding:10rpx 0;
+            // 或者flex:1;3个同层比例 1:1:1
+        }
+        .active{
+            color:var(--themeColor);
+            border-bottom: 5rpx solid currentColor;
+        }
+    }
+    .tabs-content{}
+}

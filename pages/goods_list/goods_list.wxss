@@ -1,1 +1,3 @@
-/* pages/goods_list/goods_list.wxss */
+.first-lab .goods-item {
+  display: flex;
+}
