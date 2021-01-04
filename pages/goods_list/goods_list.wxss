@@ -1,3 +1,31 @@
 .first-lab .goods-item {
   display: flex;
+  border-bottom: 1px solid #ccc;
+}
+.first-lab .goods-item .left {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.first-lab .goods-item .left image {
+  width: 70%;
+}
+.first-lab .goods-item .right-content {
+  padding-right: 25rpx;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.first-lab .goods-item .right-content .title {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+}
+.first-lab .goods-item .right-content .price {
+  color: var(--themeColor);
+  font-size: 32rpx;
 }

@@ -1,7 +1,33 @@
 .first-lab{
     .goods-item{
         display:flex;
-        .left{}
-        .right{}
+        border-bottom:1px solid #ccc;
+        .left{
+            flex:2;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            image{
+                width:70%
+            }
+        }
+        .right-content{
+            padding-right:25rpx;
+            flex:3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .title{
+                display:-webkit-box;
+                overflow:hidden;
+                -webkit-box-orient:vertical;
+                -webkit-line-clamp:2; //主要控制要显示的行数
+                text-overflow: ellipsis;
+            }
+            .price{
+                color:var(--themeColor);
+                font-size:32rpx;
+            }
+        }
     }
 }

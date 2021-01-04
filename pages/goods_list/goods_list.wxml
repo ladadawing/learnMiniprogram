@@ -5,13 +5,14 @@
             <view class="first-lab">
                 <navigator class="goods-item"
                     wx:for="{{goodsList}}"
+                    wx:key="goods_id"
                     >
                     <view class="left">
-                        <image mode="WidthFix" src="{{}}" />
+                        <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000160455569_1_400x400.jpg'}}" />
                     </view>
                     <view class="right-content">
-                        <view class="title"></view>
-                        <view class="price"></view>
+                        <view class="title">{{item.goods_name}}</view>
+                        <view class="price">￥{{item.goods_price}}</view>
                     </view>
                 </navigator>
             </view>
