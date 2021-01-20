@@ -10,9 +10,6 @@ Page({
     this.getCatesList(),
     this.getFloorList()
   },
-  onHide(){
-
-  },
   // 获取轮播图数据
   getSwiperList() { 
     // wx.request({
