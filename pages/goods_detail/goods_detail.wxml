@@ -1,2 +1,49 @@
-<!--pages/goods_detail/goods_detail.wxml-->
-<text>pages/goods_detail/goods_detail.wxml</text>
+<view class="detail_wrapper">
+    <swiper autoplay indicator-dots circular>
+    <!-- 注意这里把轮播图高度变成和image一样的高度 -->
+        <swiper-item wx:for="{{goodsObj.goods_image}}" wx:key="{{pics_id}}"
+                bindtap="handlePreviewImage"
+                data-url="{{item.pics_mid}}"
+            >
+            <image mode="widthFix" src="{{item.pics_mid}}"/>
+        </swiper-item>
+    </swiper>
+    <view class="price">
+        ￥{{goodsObj.goods_price}}
+    </view>
+    <view class="goods_name_row">
+        <view class="goods_name">{{goodsObj.goods_name}}</view>
+        <view class="goods_collect">
+            <text class="iconfont icon-11"></text>
+            <view class="name-shoucang">收藏</view>
+        </view> 
+    </view>
+    <view class="image_detail">
+        <view class="image-title">图文详情</view>
+        <view class="introduce">
+            <rich-text class="info" nodes="{{goodsObj.goods_info}}">
+                
+            </rich-text>
+        </view>
+    </view>
+</view>
+
+<!-- 底部工具栏 -->
+<view class="btn_tool">
+        <view class="btn_item">
+            <view class="iconfont icon-11"></view>
+            <view class="tool_title">客服</view>
+            <button open-type="contact"></button>
+        </view>
+        <view class="btn_item">
+            <view class="iconfont icon-11"></view>
+            <view class="tool_title">分享</view>
+            <button open-type="share"></button>
+        </view>
+        <navigator open-type="switchTab" url="/pages/cart/cart" class="btn_item">
+            <view class="iconfont icon-11"></view>
+            <view class="tool_title">购物车</view>
+        </navigator>
+        <view class="tool_item btn_cart" bindtap="handleAddCart">加入购物车</view>
+        <view class="tool_item btn_buy">立即购买</view>
+</view>
