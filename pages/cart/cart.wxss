@@ -1,1 +1,17 @@
-/* pages/cart/cart.wxss */
+.recieve .address-btn {
+  padding: 20rpx;
+}
+.recieve .address-btn button {
+  width: 60%;
+}
+.recieve .user_info_row {
+  display: flex;
+  padding: 20rpx;
+}
+.recieve .user_info_row .user_info {
+  flex: 5;
+}
+.recieve .user_info_row .user_phone {
+  flex: 3;
+  text-align: right;
+}
