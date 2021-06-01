@@ -1,5 +1,5 @@
 import { request } from '../../request/index';
-import regeneratorRuntime from '../../lib/runtime/runtime';
+// import regeneratorRuntime from '../../lib/runtime/runtime';
 
 Page({
   data: {
